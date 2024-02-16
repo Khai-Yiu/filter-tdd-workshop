@@ -16,5 +16,13 @@ describe('filter', () => {
             expect(callbackFunction.mock.calls[0][0]).toBe(arrayToFilter[0])
             expect(callbackFunction.mock.calls[1][0]).toBe(arrayToFilter[1])
         })
+        it('returns an array', () => {
+            const arrayToFilter = [1, 2]
+            const callbackFunction = jest.fn()
+            const returnedArray = filter(callbackFunction, arrayToFilter)
+            expect(returnedArray).toBeInstanceOf(Array)
+        })
+        it.skip('returns a new array', () => {})
+        it.skip('returns an array of items for which the callback function is truthy', () => {})
     })
 })  
