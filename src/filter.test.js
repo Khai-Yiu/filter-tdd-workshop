@@ -28,6 +28,12 @@ describe('filter', () => {
             const returnedArray = filter(callbackFunction, arrayToFilter)
             expect(returnedArray).not.toBe(arrayToFilter)
         })
-        it.skip('returns an array of items for which the callback function is truthy', () => {})
+        it('returns an array of items for which the callback function is truthy', () => {
+            const arrayToFilter = [1, 2]
+            const callbackFunction = jest.fn(() => true)
+            const returnedArray = filter(callbackFunction, arrayToFilter)
+            expect(returnedArray[0]).toBe(arrayToFilter[0])
+            expect(returnedArray[1]).toBe(arrayToFilter[1])
+        })
     })
 })  
